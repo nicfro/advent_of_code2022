@@ -1,4 +1,4 @@
-with open('day_10_Cathode-ray_Tube/input.txt') as f:
+with open('day_10_Cathode-ray_Tube/test.txt') as f:
     lines = f.readlines()
 
 def update_cycle(steps, cycle, x, add, screen, current_line):
@@ -11,15 +11,18 @@ def update_cycle(steps, cycle, x, add, screen, current_line):
             screen.append(current_line)
             current_line = ''
             cycle = 0
+
         cycle += 1
+
     x += add
     return cycle, x, screen, current_line
     
-
+    
 x = 1
 cycle = 1
 screen = []
 current_line = ''
+
 for line in lines:
     program = line.strip().split()
     if len(program) == 1:
